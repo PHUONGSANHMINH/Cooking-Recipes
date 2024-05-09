@@ -39,7 +39,7 @@ fun MAMA() {
             .fillMaxSize()
             .background(Color.White)
     ){
-        Text(text = "Cố lên nha các bạn!!!")
+        Text(text = "Cố lên nha các bạn hihii!!!")
     }
 
 }
