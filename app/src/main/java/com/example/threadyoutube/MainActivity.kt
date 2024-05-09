@@ -13,6 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.threadyoutube.navigation.NavGraph
 import com.example.threadyoutube.ui.theme.ThreadYoutubeTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,26 +28,18 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
+                    val navController = rememberNavController()
+                    NavGraph(navController = navController)
                 }
             }
         }
     }
 }
 
-@Composable
-fun MAMA() {
-    Box (
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.White)
-    ){
-        Text(text = "Cố lên nha các bạn haha!!!")
-    }
+//@Preview
+//@Composable
+//fun PreviewOfMain() {
+//    val navController = rememberNavController()
+//    NavGraph(navController = navController)
+//}
 
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MAMA()
-}
