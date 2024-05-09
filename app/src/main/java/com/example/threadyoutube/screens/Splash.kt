@@ -12,6 +12,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavHostController
 import com.example.threadyoutube.R
 import com.example.threadyoutube.navigation.Routes
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.delay
 
 @Composable
@@ -37,7 +38,11 @@ fun Splash(navController: NavHostController) {
     LaunchedEffect(true) {
         delay(3000)
 
+        if(FirebaseAuth.getInstance().currentUser != null)
         navController.navigate(Routes.BottomNav.routes)
+        else
+            navController.navigate(Routes.Login.routes)
+
     }
 
 

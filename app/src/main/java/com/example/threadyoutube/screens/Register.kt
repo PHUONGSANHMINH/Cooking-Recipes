@@ -25,9 +25,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import com.example.threadyoutube.navigation.Routes
 
 @Composable
-fun Register() {
+fun Register(navHostController: NavHostController) {
 
     var email by remember {
         mutableStateOf("")
@@ -147,6 +149,11 @@ fun Register() {
         }
 
         TextButton(onClick = {
+            navHostController.navigate(Routes.Login.routes){
+                popUpTo(navHostController.graph.startDestinationId)
+                launchSingleTop = true
+
+            }
 
         }, modifier = Modifier.fillMaxWidth()) {
             Text(
@@ -163,5 +170,5 @@ fun Register() {
 @Preview(showBackground = true)
 @Composable
 fun RegisterView() {
-    Register()
+//    Register()
 }
