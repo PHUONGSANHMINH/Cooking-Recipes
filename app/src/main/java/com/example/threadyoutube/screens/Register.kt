@@ -219,7 +219,7 @@ fun Register(navHostController: NavHostController) {
             label = {
                 Text(text = "Password")
             }, keyboardOptions = KeyboardOptions(
-                keyboardType = KeyboardType.Email
+                keyboardType = KeyboardType.Text
             ), singleLine = true,
             modifier = Modifier.fillMaxWidth()
         )
@@ -228,7 +228,7 @@ fun Register(navHostController: NavHostController) {
 
         ElevatedButton(onClick = {
 
-            if(name.isEmpty() || email.isEmpty() || bio.isEmpty() || password.isEmpty() || imageUri == null) {
+            if(name.isEmpty() || userName.isEmpty() || email.isEmpty() || bio.isEmpty() || password.isEmpty() || imageUri == null) {
                 Toast.makeText(context, "Please fill all details", Toast.LENGTH_SHORT).show()
             }else {
                 authViewModel.register(email, password, name, bio, userName, imageUri!!, context)
@@ -236,7 +236,7 @@ fun Register(navHostController: NavHostController) {
 
         }, modifier = Modifier.fillMaxWidth()) {
             Text(
-                text = "Register here",
+                text = "Register",
                 style = TextStyle(
                     fontWeight = FontWeight.ExtraBold,
                     fontSize = 20.sp

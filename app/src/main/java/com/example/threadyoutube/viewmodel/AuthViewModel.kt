@@ -11,7 +11,6 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.storage.ktx.storage
 import com.google.firebase.storage.storage
 import java.util.UUID
 
@@ -22,7 +21,7 @@ class AuthViewModel : ViewModel() {
     val userRef = db.getReference("users")
 
     private val storageRef = Firebase.storage.reference
-    private val imageRef   = storageRef.child("users/${UUID.randomUUID()}.jnp")
+    private val imageRef   = storageRef.child("users/${UUID.randomUUID()}.jpg")
 
     private val _firebaseUser = MutableLiveData<FirebaseUser>()
     val firebaseUser : LiveData<FirebaseUser> = _firebaseUser
